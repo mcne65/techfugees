@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Javascript Test file
+	</title>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</head>
+<body>
+
+<img src="sirani.jpg" id='sirani_pic'>
+<button id ='feed_button'>feed</button>
+
+<p>Sirani - Photo</p>
+
+<!-- put scripts at the end of the body -->
+<script type="text/javascript">
+
+// Variables put semi colon at end of each line  
+var my_id = 123;
+var my_name = "vince";
+console.log(my_name, "myid=", my_id);
+
+function my_firstfun(my_input_arg){
+	console.log("hello world calling from func")
+
+	console.log(my_input_arg)
+}
+//calls function
+my_firstfun(my_name)
+
+//make function called multiply - takes two arguments and multiples them
+function multiply(first_arg, sec_arg){
+	var the_product = first_arg * sec_arg;
+
+// now it has returned th product	
+return the_product;
+}
+var the_product = multiply(11,3);
+console.log(the_product)
+
+console.log(Plotly)
+var d3 = Plotly.d3;
+
+//interactivity 
+//get html in js
+var my_sirani_pic = d3.select('#sirani_pic');
+
+console.log(my_sirani_pic);
+//make something happen on user input - make a trigger
+
+my_sirani_pic.on('mouseover', function(){
+	window.alert('Sirani says hello')
+})
+//pulled some 
+var feed_button = d3.select('#feed_button');
+feed_button.on('click', function(){
+	
+	var my_sirani_pic =d3.select('#sirani_pic');
+
+	var current_width = parseInt(my_sirani_pic.style('width'))
+	console.log(current_width);
+	//changed the html/css/style of an html element
+	my_sirani_pic.style('width', (current_width + 30)+ 'px')
+
+})
+//Array list
+var my_array = [1,2,3,4,5];
+
+console.log('My Array')
+console.log(my_array)
+//Object
+var my_object = { 
+my_name: 'vince',
+my_status: 'Phd'
+}
+
+console.log('My Object')
+console.log(my_object['my_status'])
+</script>
+
+
+
+</body>
+</html>
